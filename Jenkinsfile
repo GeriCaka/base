@@ -1,9 +1,10 @@
 pipeline {
   agent any
   
-  parameters {
-    choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
-    booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+  parameters {    
+    booleanParam(name: 'StageA', defaultValue: true, description: 'Run stage A')
+    booleanParam(name: 'StageB', defaultValue: true, description: 'Run stage A')
+    booleanParam(name: 'StageC', defaultValue: true, description: 'Run stage A')
   }
   
   stages {
