@@ -3,6 +3,7 @@ pipeline {
   
   parameters {
     choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+    booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
   }
   
   stages {
