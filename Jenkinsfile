@@ -14,17 +14,22 @@ pipeline {
       }
       steps {
         echo 'Inside stageA'
-        echo "${StageA}"
       }
     }
     
     stage('stageB') {
+      when {
+        expression { return params.StageB }
+      }
       steps {
         echo 'Inside stageB'
       }
     }
     
     stage('stageC') {
+      when {
+        expression { return params.StageC }
+      }
       steps {
         echo 'Inside stageC'
       }
