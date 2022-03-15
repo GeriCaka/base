@@ -9,6 +9,9 @@ pipeline {
   
   stages {
     stage('stageA') {
+      when {
+        expression { return params.StageA }
+      }
       steps {
         echo 'Inside stageA'
         echo "${StageA}"
