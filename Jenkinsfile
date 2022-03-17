@@ -14,7 +14,7 @@ pipeline {
     stage ('prova') {
       steps {
         script {
-          def workspace = currentBuild.getBuildCauses().upstreamUrl[0]
+          def workspace = currentBuild.getBuildCauses().upstreamProject
           echo "parent: ${workspace}"
           echo "Pwddddd: ${pwd()}"
           echo "JENKINS_HOME: ${env.JENKINS_HOME}"
