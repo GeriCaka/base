@@ -14,7 +14,7 @@ pipeline {
     stage ('prova') {
       steps {
         script {
-          def workspace = build.properties["environment"]
+          def workspace = build.properties["environment"]["JENKINS_HOME"]
           echo "${workspace}"
         }
       }
