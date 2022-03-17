@@ -15,7 +15,8 @@ pipeline {
       steps {
         script {
           if (currentBuild.upstreamBuilds) {
-            echo "${currentBuild.upstreamBuilds[0].projectName}"
+            def project = currentBuild.upstreamBuilds
+            echo "${project}"
           } else {
             return "Mahhh"
           }
