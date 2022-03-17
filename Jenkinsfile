@@ -14,7 +14,7 @@ pipeline {
     stage ('prova') {
       steps {
         script {
-          def workspace = currentBuild.getBuildCauses().upstreamUrl
+          def workspace = currentBuild.getBuildCauses().upstreamUrl[0]
           echo "${workspace}"
         }
       }
