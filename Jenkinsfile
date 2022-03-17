@@ -13,7 +13,7 @@ pipeline {
     
     stage ('prova') {
       steps {
-        echo "${currentBuild.getBuildCauses()}"
+        echo "${currentBuild.upstreamBuilds()}"
       }
     }
     
