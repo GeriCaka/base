@@ -15,8 +15,9 @@ pipeline {
       steps {
         script {
           def workspace = currentBuild.getBuildCauses().upstreamUrl[0]
-          echo "${workspace}"
+          echo "parent: ${workspace}"
           echo "Pwddddd: ${pwd()}"
+          echo "JENKINS_HOME: ${env.JENKINS_HOME}"
         }
       }
     }
