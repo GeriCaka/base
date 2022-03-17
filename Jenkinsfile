@@ -2,6 +2,7 @@ pipeline {
   agent any
   
   parameters {    
+    string(name: 'Workspace', defaultValue: 'NONE', description: 'Workspace')
     booleanParam(name: 'Build', defaultValue: true, description: 'Run Build')
     booleanParam(name: 'StageA', defaultValue: true, description: 'Run stage A')
     booleanParam(name: 'StageB', defaultValue: true, description: 'Run stage B')
@@ -12,7 +13,7 @@ pipeline {
     
     stage('prova') {
       steps {
-        echo "${env.WORKSPACE}"
+        echo "${params.Workspace}"
       }
     }
     
