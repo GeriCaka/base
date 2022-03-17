@@ -9,16 +9,12 @@ pipeline {
     booleanParam(name: 'StageC', defaultValue: true, description: 'Run stage C')
   }
   
+  environment {
+       upstream_project_name = currentBuild.getBuildCauses().upstreamProject[0]
+       upstream_project_URL = "${env.JENKINS_HOME}" + '\\workspace\\' + "${upstream_project_name}" 
+  }
+  
   stages {  
-    
-    stage ('prova') {
-      steps {
-        script {          
-          def upstream_project_name = currentBuild.getBuildCauses().upstreamProject[0]
-          def upstream_project_URL = "${env.JENKINS_HOME}" + '\\workspace\\' + "${upstream_project_name}"         
-        }
-      }
-    }
     
     stage('Build') {
        when {
