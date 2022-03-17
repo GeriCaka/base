@@ -11,7 +11,7 @@ pipeline {
   
   stages {  
     
-    stage ('prova')- {
+    stage ('prova') {
       steps {
         script {
           if (currentBuild.upstreamBuilds) {
