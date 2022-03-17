@@ -10,6 +10,12 @@ pipeline {
   
   stages {
     
+    stage('prova') {
+      steps {
+        echo "${env.WORKSPACE}"
+      }
+    }
+    
     stage('Build') {
        when {
         expression { return params.Build }
