@@ -9,21 +9,18 @@ pipeline {
     booleanParam(name: 'StageC', defaultValue: true, description: 'Run stage C')
   }
   
-  stages {
-    
-    stage('prova') {
-      steps {
-        echo "${params.Workspace}"
-      }
-    }
+  stages {  
     
     stage('Build') {
        when {
         expression { return params.Build }
       }
       steps {
-        copyArtifacts fingerprintArtifacts: true, projectName: 'Jenkinsfile', selector: upstream()
-        bat "mvn clean install"
+        bat """
+        cd ${params.Workspace}
+        dir
+        mvn clean instal
+        """       
       }
     }
     
