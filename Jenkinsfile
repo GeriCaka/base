@@ -13,7 +13,7 @@ pipeline {
     
     stage ('prova') {
       steps {
-        echo "${currentBuild.upstreamBuilds}"
+        echo "${currentBuild}"
       }
     }
     
