@@ -13,7 +13,7 @@ pipeline {
     
     stage ('prova') {
       steps {
-        echo "${currentBuild.fullDisplayName}"
+        echo "${currentBuild.buildVariables}"
       }
     }
     
