@@ -13,7 +13,7 @@ pipeline {
     
     stage ('prova') {
       steps {
-        echo "${currentBuild.getRawBuild()}"
+        echo "${currentBuild.getRawBuild()..getParent()}"
       }
     }
     
