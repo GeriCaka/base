@@ -13,11 +13,10 @@ pipeline {
     
     stage ('prova') {
       steps {
-        script {
-          def PARENT_WORKSPACE_URL = new URIBuilder(env.JENKINS_HOME)
-          echo "${PARENT_WORKSPACE_URL}"
+        script {          
           def upstream_project_name = currentBuild.getBuildCauses().upstreamProject[0]
-          echo "parent: ${workspace}"       
+          echo "parent: ${workspace}"   
+          echo "${env.JENKINS_HOME}" + '/workspace'
          
         }
       }
