@@ -16,6 +16,7 @@ pipeline {
         script {
           def workspace = currentBuild.getBuildCauses().upstreamUrl[0]
           echo "${workspace}"
+          echo "Pwddddd: ${pwd()}"
         }
       }
     }
