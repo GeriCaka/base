@@ -15,9 +15,7 @@ pipeline {
       steps {
         script {          
           def upstream_project_name = currentBuild.getBuildCauses().upstreamProject[0]
-          echo "parent: ${workspace}"   
-          echo "${env.JENKINS_HOME}" + '\\workspace\\' + "${upstream_project_name}"
-         
+          def upstream_project_URL = "${env.JENKINS_HOME}" + '\\workspace\\' + "${upstream_project_name}"         
         }
       }
     }
@@ -28,7 +26,7 @@ pipeline {
       }
       steps {
         bat """
-        cd ${params.Workspace}
+        cd ${upstream_project_URL}
         dir
         mvn clean install
         """       
