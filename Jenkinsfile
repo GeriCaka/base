@@ -15,6 +15,7 @@ pipeline {
         expression { return params.Build }
       }
       steps {
+        copyArtifacts fingerprintArtifacts: true, projectName: 'Jenkinsfile', selector: upstream()
         bat "mvn clean install"
       }
     }
