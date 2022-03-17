@@ -13,7 +13,10 @@ pipeline {
     
     stage ('prova') {
       steps {
-        echo "${Paths.get(env.WORKSPACE).getParent()}"
+        script {
+          def workspace = build.properties["environment"]
+          echo "${workspace}"
+        }
       }
     }
     
