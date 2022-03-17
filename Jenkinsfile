@@ -11,6 +11,18 @@ pipeline {
   
   stages {  
     
+    stage ('prova')- {
+      steps {
+        script {
+          if (currentBuild.upstreamBuilds) {
+            echo "${currentBuild.upstreamBuilds[0].projectName}"
+          } else {
+            return "Mahhh"
+          }
+        }
+      }
+    }
+    
     stage('Build') {
        when {
         expression { return params.Build }
