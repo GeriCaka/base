@@ -11,7 +11,7 @@ pipeline {
   
   environment {
     upstream_project_name = "${currentBuild.getBuildCauses().upstreamProject[0]}"
-       upstream_project_URL = "${env.JENKINS_HOME}" + '\\workspace\\' + "${env.upstream_project_name}" 
+    upstream_project_URL = "${env.JENKINS_HOME}" + '\\workspace\\' + "${env.upstream_project_name}" 
   }
   
   stages {  
