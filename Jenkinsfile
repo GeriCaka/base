@@ -19,7 +19,7 @@ pipeline {
         bat """
         cd ${params.Workspace}
         dir
-        mvn clean instal
+        mvn clean install
         """       
       }
     }
