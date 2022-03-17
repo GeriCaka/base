@@ -13,14 +13,7 @@ pipeline {
     
     stage ('prova') {
       steps {
-        script {
-          if (currentBuild.upstreamBuilds) {
-            def project = currentBuild.upstreamBuilds
-            echo "${project}"
-          } else {
-            return "Mahhh"
-          }
-        }
+        echo "${currentBuild.upstreamBuilds}"
       }
     }
     
